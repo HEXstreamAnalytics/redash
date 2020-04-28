@@ -18,21 +18,21 @@ ARG skip_ds_deps
 RUN useradd --create-home redash
 
 # Oracle instantclient
-ADD oracle/instantclient-basic-linux-19.6.0.0.0dbru.zip /tmp/instantclient-basic-linux-19.6.0.0.0dbru.zip
-ADD oracle/instantclient-jdbc-linux-19.6.0.0.0dbru.zip /tmp/instantclient-jdbc-linux-19.6.0.0.0dbru.zip
-ADD oracle/instantclient-odbc-linux-19.6.0.0.0dbru.zip /tmp/instantclient-odbc-linux-19.6.0.0.0dbru.zip
-ADD oracle/instantclient-sdk-linux-19.6.0.0.0dbru.zip /tmp/instantclient-sdk-linux-19.6.0.0.0dbru.zip
-ADD oracle/instantclient-sqlplus-linux-19.6.0.0.0dbru.zip /tmp/instantclient-sqlplus-linux-19.6.0.0.0dbru.zip
+ADD oracle/instantclient-basic-linux.x64-19.6.0.0.0dbru.zip /tmp/iinstantclient-basic-linux.x64-19.6.0.0.0dbru.zip
+ADD oracle/instantclient-jdbc-linux.x64-19.6.0.0.0dbru.zip /tmp/instantclient-jdbc-linux.x64-19.6.0.0.0dbru.zip
+ADD oracle/instantclient-odbc-linux.x64-19.6.0.0.0dbru.zip /tmp/instantclient-odbc-linux.x64-19.6.0.0.0dbru.zip
+ADD oracle/instantclient-sdk-linux.x64-19.6.0.0.0dbru.zip /tmp/instantclient-sdk-linux.x64-19.6.0.0.0dbru.zip
+ADD oracle/instantclient-sqlplus-linux.x64-19.6.0.0.0dbru.zip /tmp/instantclient-sqlplus-linux.x64-19.6.0.0.0dbru.zip
 
 RUN apt-get update  -y
 RUN apt-get install -y unzip
 
 # UnZip Oracle instantclient
-RUN unzip /tmp/instantclient-basic-linux-19.6.0.0.0dbru.zip -d /usr/local/
-RUN unzip /tmp/instantclient-jdbc-linux-19.6.0.0.0dbru.zip -d /usr/local/
-RUN unzip /tmp/instantclient-odbc-linux-19.6.0.0.0dbru.zip -d /usr/local/
-RUN unzip /tmp/instantclient-sdk-linux-19.6.0.0.0dbru.zip -d /usr/local/
-RUN unzip /tmp/instantclient-sqlplus-linux-19.6.0.0.0dbru.zip -d /usr/local/
+RUN unzip /tmp/instantclient-basic-linux.x64-19.6.0.0.0dbru.zip -d /usr/local/
+RUN unzip /tmp/instantclient-jdbc-linux.x64-19.6.0.0.0dbru.zip -d /usr/local/
+RUN unzip /tmp/instantclient-odbc-linux.x64-19.6.0.0.0dbru.zip -d /usr/local/
+RUN unzip /tmp/instantclient-sdk-linux.x64-19.6.0.0.0dbru.zip -d /usr/local/
+RUN unzip /tmp/instantclient-sqlplus-linux.x64-19.6.0.0.0dbru.zip -d /usr/local/
 
 RUN ln -s /usr/local/instantclient_19_6 /usr/local/instantclient
 RUN ln -s /usr/local/instantclient/sqlplus /usr/bin/sqlplus
