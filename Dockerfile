@@ -18,21 +18,21 @@ ARG skip_ds_deps
 RUN useradd --create-home redash
 
 # Oracle instantclient
-ADD oracle/instantclient-basic-linux-19.6.0.0.0dbru.zip /tmp/instantclient-basic-linux-19.6.0.0.0dbru.zip
-ADD oracle/instantclient-jdbc-linux-19.6.0.0.0dbru.zip /tmp/instantclient-jdbc-linux-19.6.0.0.0dbru.zip
-ADD oracle/instantclient-odbc-linux-19.6.0.0.0dbru.zip /tmp/instantclient-odbc-linux-19.6.0.0.0dbru.zip
-ADD oracle/instantclient-sdk-linux-19.6.0.0.0dbru.zip /tmp/instantclient-sdk-linux-19.6.0.0.0dbru.zip
-ADD oracle/instantclient-sqlplus-linux-19.6.0.0.0dbru.zip /tmp/instantclient-sqlplus-linux-19.6.0.0.0dbru.zip
+ADD oracle/instantclient-basic-linux.zip /tmp/iinstantclient-basic-linux.zip
+ADD oracle/instantclient-jdbc-linux.zip /tmp/instantclient-jdbc-linux.zip
+ADD oracle/instantclient-odbc-linux.zip /tmp/instantclient-odbc-linux.zip
+ADD oracle/instantclient-sdk-linux.zip /tmp/instantclient-sdk-linux.zip
+ADD oracle/instantclient-sqlplus-linux.zip /tmp/instantclient-sqlplus-linux.zip
 
 RUN apt-get update  -y
 RUN apt-get install -y unzip
 
 # UnZip Oracle instantclient
-RUN unzip /tmp/instantclient-basic-linux-19.6.0.0.0dbru.zip -d /usr/local/
-RUN unzip /tmp/instantclient-jdbc-linux-19.6.0.0.0dbru.zip -d /usr/local/
-RUN unzip /tmp/instantclient-odbc-linux-19.6.0.0.0dbru.zip -d /usr/local/
-RUN unzip /tmp/instantclient-sdk-linux-19.6.0.0.0dbru.zip -d /usr/local/
-RUN unzip /tmp/instantclient-sqlplus-linux-19.6.0.0.0dbru.zip -d /usr/local/
+RUN unzip /tmp/instantclient-basic-linux.zip -d /usr/local/
+RUN unzip /tmp/instantclient-jdbc-linux.zip -d /usr/local/
+RUN unzip /tmp/instantclient-odbc-linux.zip -d /usr/local/
+RUN unzip /tmp/instantclient-sdk-linux.zip -d /usr/local/
+RUN unzip /tmp/instantclient-sqlplus-linux.zip -d /usr/local/
 
 RUN ln -s /usr/local/instantclient_19_6 /usr/local/instantclient
 RUN ln -s /usr/local/instantclient/sqlplus /usr/bin/sqlplus
